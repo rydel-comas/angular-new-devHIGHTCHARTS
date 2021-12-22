@@ -24,6 +24,12 @@
 
 </div>
 
+<div class="c-button-container">
+<button (click)="openModal(modalTemplate)">Open Modal</button>
+<button (click)="openModal(modalTemplate)">Open Modal</button>
+<button (click)="openModal(modalTemplate)">Open Modal</button>
+  <div>
+
 <div class="c-chart-container">
 
   <highcharts-chart
@@ -49,9 +55,12 @@
 
 </div>
 
+<div class="c-button-container">
 <button (click)="openModal(modalTemplate)">Open Modal</button>
+<button (click)="openModal(modalTemplate)">Open Modal</button>
+<button (click)="openModal(modalTemplate)">Open Modal</button>
+<div>
 
 <ng-template #modalTemplate>
   <app-grid [dataFromParent]="modalRef"></app-grid>
 </ng-template>
-
