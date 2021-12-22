@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { AppComponent } from './app.component';
 import { ChartsComponent } from './module/charts/charts.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { ChartsComponent } from './module/charts/charts.component';
   ],
   imports: [
     BrowserModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

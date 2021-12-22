@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import {ChartsService} from "../services/charts.service";
 
 @Component({
   selector: 'app-charts',
@@ -15,9 +16,12 @@ export class ChartsComponent implements OnInit {
       type: 'line'
     }]
   };
-  constructor() { }
+  constructor(private chartService: ChartsService) { }
 
   ngOnInit(): void {
+    this.chartService.getData().subscribe(data=>{
+      console.log(data);
+    })
   }
 
 }
