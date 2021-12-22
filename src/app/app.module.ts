@@ -4,7 +4,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { AppComponent } from './app.component';
 import { ChartsComponent } from './module/charts/charts.component';
 import {HttpClientModule} from "@angular/common/http";
-import { GridComponent } from './grid/grid.component';
+import { GridComponent } from './module/grid/grid.component';
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GridComponent } from './grid/grid.component';
   imports: [
     BrowserModule,
     HighchartsChartModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

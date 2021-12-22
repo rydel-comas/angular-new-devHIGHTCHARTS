@@ -48,3 +48,10 @@
   ></highcharts-chart>
 
 </div>
+
+<button (click)="openModal(modalTemplate)">Open Modal</button>
+
+<ng-template #modalTemplate>
+  <app-grid [dataFromParent]="modalRef"></app-grid>
+</ng-template>
+
