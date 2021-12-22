@@ -4,11 +4,13 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { AppComponent } from './app.component';
 import { ChartsComponent } from './module/charts/charts.component';
 import {HttpClientModule} from "@angular/common/http";
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChartsComponent
+    ChartsComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
