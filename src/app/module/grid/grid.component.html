@@ -15,11 +15,11 @@
 
     <div class="row" *ngFor="let value of _dataTable.serie; let i = index">
       <div *ngIf="i<10" class="col-sm">
-        {{value.fecha}}
+        {{value.fecha | date: 'dd/MM/yyyy'}}
       </div>
       <div *ngIf="i<10" class="col-sm">
-        {{value.valor}}
-        {{_dataTable.unidad_medida}}
+        <div *ngIf="_dataTable.unidad_medida ==='Porcentaje'">{{value.valor}}%</div>
+        <div *ngIf="_dataTable.unidad_medida !=='Porcentaje'">{{value.valor | currency}}</div>
       </div>
     </div>
 
