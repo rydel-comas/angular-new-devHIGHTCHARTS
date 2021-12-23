@@ -17,7 +17,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
     BrowserModule,
     HighchartsChartModule,
     HttpClientModule,
-    ModalModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

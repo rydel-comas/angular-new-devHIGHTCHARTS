@@ -66,4 +66,7 @@ export class ChartsComponent implements OnInit {
     );
   }
 
+  closeModal() {
+    this.modalService.hide();
+  }
 }

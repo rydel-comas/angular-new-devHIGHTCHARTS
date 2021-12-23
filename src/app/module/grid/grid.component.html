@@ -13,15 +13,17 @@
       </div>
     </div>
 
-    <div class="row" *ngFor="let value of _dataTable.serie">
-      <div class="col-sm">
+    <div class="row" *ngFor="let value of _dataTable.serie; let i = index">
+      <div *ngIf="i<10" class="col-sm">
         {{value.fecha}}
       </div>
-      <div class="col-sm">
+      <div *ngIf="i<10" class="col-sm">
         {{value.valor}}
         {{_dataTable.unidad_medida}}
       </div>
     </div>
 
   </div>
+
 </div>
+
