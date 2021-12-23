@@ -2,6 +2,7 @@ import {Component, Input, OnInit, TemplateRef} from '@angular/core';
 import * as Highcharts from 'highcharts';
 import {ChartsService} from "../services/charts.service";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
+import * as moment from "moment";
 
 @Component({
   selector: 'app-charts',
@@ -28,7 +29,7 @@ export class ChartsComponent implements OnInit {
         title: {
           text: this.dataTable.nombre
         },
-        subtitle: {text:'en ' + this.dataTable.unidad_medida + ' al ' + this.dataTable.serie[0].fecha},
+        subtitle: {text:'en ' + this.dataTable.unidad_medida + ' al ' + moment(this.dataTable.serie[0].fecha).format('DD/MM/YYYY') },
         xAxis: {
           title: {
             text: 'Fecha'
