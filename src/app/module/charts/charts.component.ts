@@ -11,14 +11,6 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 export class ChartsComponent implements OnInit {
 
   dataTable: any;
-
-  @Input() set indicator(indicator: string){
-    console.log(indicator);
-    this.chartService.getData(indicator).subscribe(value => {
-      this.dataTable=value;
-    })
-  }
-
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
     series: [{
@@ -26,6 +18,35 @@ export class ChartsComponent implements OnInit {
       type: 'line'
     }]
   };
+
+
+  @Input() set indicator(indicator: string){
+    console.log(indicator);
+    this.chartService.getData(indicator).subscribe(value => {
+      this.dataTable=value;
+      this.chartOptions={
+        title: {
+          text: this.dataTable.nombre
+        },
+        subtitle: {text:'en ' + this.dataTable.unidad_medida + ' al ' + this.dataTable.serie[0].fecha},
+        xAxis: {
+          title: {
+            text: 'Fecha'
+          },
+          categories: [this.dataTable.serie[0].fecha, this.dataTable.serie[1].fecha, this.dataTable.serie[2].fecha]
+        },
+        yAxis: {
+          title: {
+            text: 'Valor en ' +this.dataTable.unidad_medida
+          }
+        },
+        series: [{
+          data: [this.dataTable.serie[0].valor, this.dataTable.serie[1].valor, this.dataTable.serie[2].valor],
+          type: 'line'
+        }]
+      }
+    })
+  }
 
   public modalRef: BsModalRef | undefined;
 
