@@ -1,4 +1,4 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, Input, OnInit, TemplateRef} from '@angular/core';
 import * as Highcharts from 'highcharts';
 import {ChartsService} from "../services/charts.service";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
@@ -9,6 +9,15 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
   styleUrls: ['./charts.component.scss']
 })
 export class ChartsComponent implements OnInit {
+
+  dataTable: any;
+
+  @Input() set indicator(indicator: string){
+    console.log(indicator);
+    this.chartService.getData(indicator).subscribe(value => {
+      this.dataTable=value;
+    })
+  }
 
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
@@ -24,9 +33,6 @@ export class ChartsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.chartService.getData().subscribe(data=>{
-      console.log(data);
-    })
   }
 
   openModal(modalTemplate: TemplateRef<any>) {

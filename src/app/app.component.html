@@ -1,1 +1,7 @@
-<app-charts><app-charts>
+<div *ngFor="let indicator of indicators">
+
+<app-charts
+[indicator]="indicator">
+  </app-charts>
+
+</div>

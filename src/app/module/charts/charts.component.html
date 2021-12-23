@@ -3,64 +3,19 @@
 <highcharts-chart
   [Highcharts]="Highcharts"
   [options]="chartOptions"
-
   style="width: 30%; height: 300px; display: block;"
 ></highcharts-chart>
 
-<highcharts-chart
-  [Highcharts]="Highcharts"
-  [options]="chartOptions"
 
-  style="width: 30%; height: 300px; display: block;"
-></highcharts-chart>
-
-  <highcharts-chart
-    [Highcharts]="Highcharts"
-    [options]="chartOptions"
-
-    style="width: 30%; height: 300px; display: block;"
-  ></highcharts-chart>
-
-
-</div>
-
-<div class="c-button-container">
-<button (click)="openModal(modalTemplate)">Open Modal</button>
-<button (click)="openModal(modalTemplate)">Open Modal</button>
-<button (click)="openModal(modalTemplate)">Open Modal</button>
+  <div class="c-button-container">
+    <button (click)="openModal(modalTemplate)">Ver detalles</button>
   </div>
-
-<div class="c-chart-container">
-
-  <highcharts-chart
-    [Highcharts]="Highcharts"
-    [options]="chartOptions"
-
-    style="width: 30%; height: 300px; display: block;"
-  ></highcharts-chart>
-
-  <highcharts-chart
-    [Highcharts]="Highcharts"
-    [options]="chartOptions"
-
-    style="width: 30%; height: 300px; display: block;"
-  ></highcharts-chart>
-
-  <highcharts-chart
-    [Highcharts]="Highcharts"
-    [options]="chartOptions"
-
-    style="width: 30%; height: 300px; display: block;"
-  ></highcharts-chart>
-
 </div>
 
-<div class="c-button-container">
-<button (click)="openModal(modalTemplate)">Open Modal</button>
-<button (click)="openModal(modalTemplate)">Open Modal</button>
-<button (click)="openModal(modalTemplate)">Open Modal</button>
-</div>
+
 
 <ng-template #modalTemplate>
-  <app-grid [dataFromParent]="modalRef"></app-grid>
+  <app-grid
+    [dataTable]="dataTable"
+    [dataFromParent]="modalRef"></app-grid>
 </ng-template>

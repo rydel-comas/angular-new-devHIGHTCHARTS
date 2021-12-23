@@ -10,8 +10,8 @@ import {environment} from "../../../environments/environment";
 export class ChartsService {
   constructor(private readonly http: HttpClient) {}
 
-  public getData(): Observable<any> {
-    return this.http.get<any[]>(`${environment.base_endpoint}/api`
+  public getData(indicator:string): Observable<any> {
+    return this.http.get<any[]>(`${environment.base_endpoint}/api/${indicator}`
     );
   }
 }

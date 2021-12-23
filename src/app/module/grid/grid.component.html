@@ -1,16 +1,27 @@
-<div class="modal-container d-flex justify-content-center align-items-center"  style="height: 20vh;">
+<div class="modal-container d-flex justify-content-center align-items-center">
+
   <div class="container">
-  <h2>Hello World</h2>
+    <h2>Indicador de : {{_dataTable.nombre}}</h2>
 
 
     <div class="row">
       <div class="col-sm">
-        One of three columns
+        Fecha
       </div>
       <div class="col-sm">
-        One of three columns
+        Valor
       </div>
     </div>
-  </div>
 
+    <div class="row" *ngFor="let value of _dataTable.serie">
+      <div class="col-sm">
+        {{value.fecha}}
+      </div>
+      <div class="col-sm">
+        {{value.valor}}
+        {{_dataTable.unidad_medida}}
+      </div>
+    </div>
+
+  </div>
 </div>
