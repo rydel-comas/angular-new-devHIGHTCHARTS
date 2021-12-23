@@ -34,7 +34,7 @@ export class ChartsComponent implements OnInit {
           title: {
             text: 'Fecha'
           },
-          categories: [this.dataTable.serie[0].fecha, this.dataTable.serie[1].fecha, this.dataTable.serie[2].fecha]
+          categories: [moment(this.dataTable.serie[0].fecha).format('DD/MM/YYYY'),moment(this.dataTable.serie[3].fecha).format('DD/MM/YYYY'),moment(this.dataTable.serie[6].fecha).format('DD/MM/YYYY')]
         },
         yAxis: {
           title: {
@@ -42,6 +42,7 @@ export class ChartsComponent implements OnInit {
           }
         },
         series: [{
+          name: this.dataTable.codigo,
           data: [this.dataTable.serie[0].valor, this.dataTable.serie[1].valor, this.dataTable.serie[2].valor],
           type: 'line'
         }]
