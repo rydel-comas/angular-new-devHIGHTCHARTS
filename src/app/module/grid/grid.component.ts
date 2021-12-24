@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, TemplateRef} from '@angular/core';
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
-import {ChartsService} from "../services/charts.service";
+import {ChartsService} from "../core/services/charts.service";
 import {DataInterface} from "../../interface/data.interface";
 
 @Component({

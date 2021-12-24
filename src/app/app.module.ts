@@ -6,19 +6,19 @@ import { ChartsComponent } from './module/charts/charts.component';
 import {HttpClientModule} from "@angular/common/http";
 import { GridComponent } from './module/grid/grid.component';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
-import {AutoUnsubscribeComponent} from "./module/core/auto-unsubscribe.component";
+import {CoreModule} from "./module/core";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartsComponent,
-    GridComponent,
-    AutoUnsubscribeComponent
+    GridComponent
   ],
   imports: [
     BrowserModule,
     HighchartsChartModule,
     HttpClientModule,
+    CoreModule,
     ModalModule.forRoot()
   ],
   providers: [],
