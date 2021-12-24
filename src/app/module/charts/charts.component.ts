@@ -26,6 +26,12 @@ export class ChartsComponent implements OnInit {
     this.chartService.getData(indicator).subscribe(value => {
       this.dataTable=value;
       this.chartOptions={
+        caption:{
+          text: this.dataTable.serie[0].valor,
+          verticalAlign: "top",
+          align: "center",
+          style: {"fontSize" : "20px"}
+        },
         title: {
           text: this.dataTable.nombre
         },
