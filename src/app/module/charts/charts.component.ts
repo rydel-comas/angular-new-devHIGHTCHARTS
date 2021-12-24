@@ -4,13 +4,14 @@ import {ChartsService} from "../services/charts.service";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import * as moment from "moment";
 import {DataInterface} from "../../interface/data.interface";
+import {AutoUnsubscribeComponent} from "../core/auto-unsubscribe.component";
 
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.scss']
 })
-export class ChartsComponent implements OnInit {
+export class ChartsComponent extends AutoUnsubscribeComponent implements OnInit {
 
   dataTable: DataInterface = {};
   Highcharts: typeof Highcharts = Highcharts;
@@ -24,11 +25,12 @@ export class ChartsComponent implements OnInit {
 
   @Input() set indicator(indicator: string){
     console.log(indicator);
-    this.chartService.getData(indicator).subscribe(value => {
+    const subsData = this.chartService.getData(indicator).subscribe(value => {
       this.dataTable=value;
       this.chartOptions={
         caption:{
-          text: this.dataTable.serie[0].valor,
+          //TODO identificar signo
+          text: '$' + this.dataTable.serie[0].valor,
           verticalAlign: "top",
           align: "center",
           style: {"fontSize" : "20px"}
@@ -55,11 +57,13 @@ export class ChartsComponent implements OnInit {
         }]
       }
     })
+    this.subscriptions.push(subsData);
   }
 
   public modalRef: BsModalRef | undefined;
 
   constructor(private chartService: ChartsService, private modalService: BsModalService) {
+    super();
   }
 
   ngOnInit(): void {
