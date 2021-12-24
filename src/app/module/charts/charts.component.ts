@@ -43,7 +43,7 @@ export class ChartsComponent implements OnInit {
         },
         series: [{
           name: this.dataTable.codigo,
-          data: [this.dataTable.serie[0].valor, this.dataTable.serie[1].valor, this.dataTable.serie[2].valor],
+          data: [this.dataTable.serie[0].valor, this.dataTable.serie[3].valor, this.dataTable.serie[6].valor],
           type: 'line'
         }]
       }

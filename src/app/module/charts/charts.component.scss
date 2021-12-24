@@ -1,7 +1,8 @@
-.c-chart-container{
-  display: block;
+.c-container__chart{
+  width: 30%;
+  height: 350px;
+  display: flex;
+  float: left;
+  cursor: pointer;
 }
 
-.c-button-container{
-
-}
