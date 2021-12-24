@@ -3,6 +3,7 @@ import * as Highcharts from 'highcharts';
 import {ChartsService} from "../services/charts.service";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import * as moment from "moment";
+import {DataInterface} from "../../interface/data.interface";
 
 @Component({
   selector: 'app-charts',
@@ -11,7 +12,7 @@ import * as moment from "moment";
 })
 export class ChartsComponent implements OnInit {
 
-  dataTable: any;
+  dataTable: DataInterface = {};
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
     series: [{
