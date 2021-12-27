@@ -1,9 +1,9 @@
 .c-container__chart{
-  width: 33.33%;
+  min-width: 33.33%;
   height: 350px;
   display: flex;
   float: left;
   cursor: pointer;
-  border: 15px solid #4cf3f2;
+  border: 15px solid rgb(13 110 253 / 0%);
 }
 
