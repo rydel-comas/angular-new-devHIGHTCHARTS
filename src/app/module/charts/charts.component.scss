@@ -1,5 +1,5 @@
 .c-container__chart{
-  min-width: 33.33%;
+  width: 33.33%;
   height: 350px;
   display: flex;
   float: left;
@@ -7,3 +7,24 @@
   border: 15px solid rgb(13 110 253 / 0%);
 }
 
+@media (max-width:360px) {
+  .c-container__chart {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    float: left;
+    cursor: pointer;
+    border: 15px solid rgb(13 110 253 / 0%);
+  }
+}
+
+  @media only screen and (min-width:361px) and (max-width:768px) {
+    .c-container__chart {
+      width: 50%;
+      height: 350px;
+      display: flex;
+      float: left;
+      cursor: pointer;
+      border: 15px solid rgb(13 110 253 / 0%);
+    }
+}
