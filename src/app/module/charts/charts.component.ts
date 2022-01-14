@@ -78,8 +78,4 @@ export class ChartsComponent extends AutoUnsubscribeComponent implements OnInit 
       }
     );
   }
-
-  closeModal() {
-    this.modalService.hide();
-  }
 }

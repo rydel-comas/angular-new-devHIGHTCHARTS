@@ -23,4 +23,9 @@ export class GridComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  closeModal() {
+    this.modalService.hide();
+  }
+
 }

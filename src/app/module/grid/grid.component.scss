@@ -1,5 +1,4 @@
 .container{
-  height: 600px;
   background-color: #2a2a2b;
 }
 
@@ -20,4 +19,18 @@ h2{
 
 .row>* {
   width: auto;
+}
+
+.btn-success{
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-footer{
+  justify-content: center;
 }
